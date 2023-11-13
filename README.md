@@ -1,7 +1,7 @@
 <head>
-    <style>
-       <link rel="stylesheet" type="text/css" href="./style-candidato.css" />
-      </style>
+
+       <link rel="stylesheet" type="text/css" href="./style_candidato.css" />
+
   </head>
   <body>
       <div id="corpo">
