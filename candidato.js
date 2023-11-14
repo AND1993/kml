@@ -4,5 +4,5 @@ xhttp.onreadystatechange = function() {
     document.getElementById("demo").innerHTML = this.responseText;
   }
 };
-xhttp.open("GET", "body.html", true);
+xhttp.open("GET", "body_candidato.html", true);
 xhttp.send();
