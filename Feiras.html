@@ -1,0 +1,118 @@
+<head>
+    <style>
+      body {
+      width: 450px; 
+      height: 200px;
+    }
+    
+    /*Div do quadrado superior*/
+    
+  #corpo{
+      margin: 0 auto;
+      width: 470px; 
+      height: 190PX;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba( 6, 74, 6, 0.65 );
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 6px );
+      -webkit-backdrop-filter: blur( 6px );
+      border-radius: 10px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    
+    /*Div quadrado inferior*/
+    
+  #texto{
+      margin: 0 auto;
+      width: 450px;
+      height: 170px;
+      position: absolute;
+      right: 9px;
+      top: 9px;
+      background: rgba( 255, 255, 255, 0.5 );
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 2.5px );
+      -webkit-backdrop-filter: blur( 2.5px );
+      border-radius: 10px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+      line-height:2 ;
+     /* left: 10px;*/
+      font-size: 16px;
+  }
+  
+  
+  /*Divs de texto*/
+  
+  #horario{
+    position: relative;
+    left: 20px;
+    color: rgb(160, 5, 5);
+    font-size: 25px;
+  }
+
+  #dia{
+    font-size: 25px;
+  }
+  
+  #n_local, #horario, #dia {
+    margin: 0 auto;
+    width: 94%;
+    padding: 0px;
+    transition: all 0.5s;
+    cursor: pointer;
+    text-align: center;
+  }
+
+
+
+  #n_local{
+     font-size: 20px;
+     color: rgba(3, 3, 116, 0.753);
+     text-align: center;
+     line-height: 1;
+     position: relative;
+     top: 16px;
+    }
+  
+    /*Altera a cor aonde passar o mouse*/
+  
+    #n_local:hover{
+      -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+      filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    }
+    
+    #dia:hover{
+      -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+      filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    }
+    
+    #horario:hover{
+      -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+      filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+  }
+    /*---Configurações da Imagem---*/
+    img {
+      position: absolute;
+      left: -10px;
+      top: -15px;
+      padding: 5px;
+      width: 125px;
+      height: 125px;
+    }
+
+
+      </style>
+  </head>
+  <body>
+
+      <div id="corpo">
+          <div id="texto">
+            <img src="https://img.icons8.com/arcade/64/picnic.png" alt="picnic"/>
+            <div id="horario">Periodo: $[feiras/HORARIO]</div>
+            <div id="dia">$[feiras/DIA] </div>
+            <div id ="n_local">Rua Agostinho Ferreira de Campos, Vila Nova Itapevi (Feira Noturna – Fenoit)</div>  
+          </div>
+          </div>
+  </body>
