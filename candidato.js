@@ -4,5 +4,5 @@ xhttp.onreadystatechange = function() {
     document.getElementById("demo").innerHTML = this.responseText;
   }
 };
-xhttp.open("GET", "body_candidato.html", true);
+xhttp.open("GET", "https://and1993.github.io/kml/body_candidato.html", true);
 xhttp.send();
