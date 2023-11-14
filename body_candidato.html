@@ -1,0 +1,22 @@
+<head>
+
+    <link rel="stylesheet" type="text/css" href="./style_candidato.css" />
+
+</head>
+    <body>
+    <div id="corpo">
+         <img src="https://www.camarascs.sp.gov.br/images/img_vereadores/2021/professor_piomielo.png">
+          <div id="texto">
+              <div id ="n_local">$[votos_total/local_votacao]</div>
+             <div id="button"> <button onclick="alterarVotos('$[votos_total/total_votos_20]');alterarano('2020')" size =>2020</button>  
+    <button onclick="alterarVotos('$[votos_total/total_votos_16]');alterarano('2016')">2016</button>
+    <button id = 'a2012' onclick="alterarVotos('$[votos_total/total_votos_12]');alterarano('2012')">2012</button></div>
+              <div id="endereco">Endereço: $[votos_total/ENDERECO_LOCAL]</div>
+              <div id="qnt_votos">Total de votos: <span id="votos"></span></div>
+          </div>
+          </div>
+
+          <script src="./candidato.js">
+
+        </script>
+        </body>
