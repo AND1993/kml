@@ -1,0 +1,10 @@
+<head>
+
+    <link rel="stylesheet" type="text/css" href="./style_candidato.css" />
+
+</head>
+<body>
+    <p id="demo"></p>
+     <script src="caminho.js"></script>
+     <script src="./candidato.js"></script>
+</body>
