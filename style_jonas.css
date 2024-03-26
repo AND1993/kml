@@ -83,7 +83,7 @@
     /*---Configurações da Imagem---*/
     img {
       position: absolute;
-      left: 10px;
+      left: 20px;
       border-radius: 30px;
       border: 5px solid #5662cf27;
       padding: 5px;
@@ -93,7 +93,7 @@
     /*Estilo dos botões*/
     button{
         width: 100px;
-		height: 35px;
+	height: 35px;
         position: relative;
         left: 65px;
         font-size: 20px;
