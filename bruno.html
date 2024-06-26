@@ -1,0 +1,134 @@
+<head>
+    <meta charset="utf-8">
+
+    <!--Meta para responsividade-->
+    <meta name="viewport" content="initial-scale=1.0">
+    <style>
+      body {
+      width: 450px; 
+      height: 200px;
+    }
+    
+    /*Div do quadrado superior*/
+    
+  #corpo{
+      margin: 0 auto;
+      width: 640px; 
+      height: 190PX;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba( 6, 74, 6, 0.65 );
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 6px );
+      -webkit-backdrop-filter: blur( 6px );
+      border-radius: 10px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    
+    /*Div quadrado inferior*/
+    
+  #texto{
+      margin: 0 auto;
+      width: 450px;
+      height: 170px;
+      position: absolute;
+      right: 40px;
+      top: 16px;
+      background: rgba( 255, 255, 255, 0.5 );
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 2.5px );
+      -webkit-backdrop-filter: blur( 2.5px );
+      border-radius: 10px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+      line-height:1.8 ; /*ALTERAR O ESPAÇO DA LINHA AQUI*/
+     /* left: 10px;*/
+      font-size: 16px;
+  }
+  
+  
+  /*Divs de texto*/
+  
+  #votos{
+    color: rgb(160, 5, 5);
+    font-size: 20px;
+  }
+  
+   #endereco, #qnt_votos {
+    margin: 0 auto;
+    width: 94%;
+    padding: 0px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  #n_local{
+    font-size: 17px;
+     color: rgba(3, 3, 116, 0.753);
+     text-align: center;
+    }
+  
+    /*Altera a cor aonde passar o mouse*/
+  
+    #n_local:hover{
+      -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+      filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    }
+    
+    #qnt_votos:hover{
+      -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+      filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    }
+    
+    #endereco:hover{
+      -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+      filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+  }
+    /*---Configurações da Imagem---*/
+    img {
+      position: absolute;
+      left: 10px;
+      border-radius: 30px;
+      border: 5px solid #228B22;
+      padding: 5px;
+      width: 120px;
+    }
+
+    /*Estilo dos botões*/
+    button{
+        width: 155px;
+       height: 35px;
+        position: relative;
+
+       font-size: 100%;
+    }
+
+    #a2012{
+        background-color: red;
+        width: 130px;
+    }
+
+      </style>
+  </head>
+  <body>
+      <div id="corpo">
+          <img src="https://img.estadao.com.br/fotos/politica/eleicoes-2020/SP/FSP250000662871_div.jpg">
+          <div id="texto">
+              <div id ="n_local">$[votos_total/LOCAL_VOTACAO]</div>
+             <div id="button"> <button onclick="alterarVotos('$[votos_total/total_votos_20]');alterarano('2020')">2020 - Vice Prefeito</button>
+    <button onclick="alterarVotos('$[votos_total/total_votos_16]');alterarano('2016')">2016 - Vice Prefeito</button>
+    <button id="a2012" onclick="alterarVotos('$[votos_total/total_votos_12]');alterarano('2012')">2012 - Prefeito</button></div>
+              <div id="endereco">Endereço: $[votos_total/ENDERECO_LOCAL]</div>
+              <div id="qnt_votos">Total de votos: <span id="votos"></span></div>
+          </div>
+          </div>
+
+          <script>
+            function alterarVotos(valor) {
+                document.getElementById("votos").innerHTML = valor;
+            }
+    
+            function alterarano(ano) {
+                document.getElementById("ano").innerHTML = ano;
+            }
+        </script>
+  </body>
