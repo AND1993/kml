@@ -122,6 +122,16 @@
           </div>
           </div>
 
+          <table id="dados-app">
+      <div>numero local: <span id="nr-Local"> </span></div>
+      <div>Nome local: <span id="nm-Local"> </span></div>
+      <div>votos 2012: <span id="votos-12"> </span></div>
+      <div>Votos 2020: <span id="votos-20"> </span></div>
+      <div>total: <span id="total"> </span></div>
+      <div>porc: <span id="porc"> </span></div>
+      <div>metas: <span id="metas"> </span></div>
+    </table>
+
           <script>
             function alterarVotos(valor) {
                 document.getElementById("votos").innerHTML = valor;
@@ -130,5 +140,37 @@
             function alterarano(ano) {
                 document.getElementById("ano").innerHTML = ano;
             }
+
+// Faça uma solicitação GET para o link do App Script
+fetch(
+  "https://script.google.com/macros/s/AKfycbyJpj-RfLe4xqfPjVacBhOpjuf_W-uE5I3erG4LINqAKLij2kXL_n-JBbpQ3jje6Lp0/exec?local=1040"
+)
+  .then((response) => response.json())
+  .then((data) => {
+    // Verifique se os dados foram retornados
+    if (data.retornoDaSaida) {
+      // Salve cada uma das propriedades em variáveis separadas
+      const nrLocal = data.retornoDaSaida[0].Nr_local;
+      const nmLocal = data.retornoDaSaida[0].Nm_local;
+      const votos12 = data.retornoDaSaida[0].votos_12;
+      const votos20 = data.retornoDaSaida[0].Votos_20;
+      const total = data.retornoDaSaida[0].Total;
+      const porc = data.retornoDaSaida[0].Porc;
+      const metas = data.retornoDaSaida[0].Metas;
+
+      // Agora você pode usar essas variáveis para preencher os spans no seu site HTML
+      document.getElementById("nr-local").textContent = nrLocal;
+      document.getElementById("nm-local").textContent = nmLocal;
+      document.getElementById("votos-12").textContent = votos12;
+      document.getElementById("votos-20").textContent = votos20;
+      document.getElementById("total").textContent = total;
+      document.getElementById("porc").textContent = porc;
+      document.getElementById("metas").textContent = metas;
+    } else {
+      console.log("Nenhum dado encontrado");
+    }
+  })
+  .catch((error) => console.error("Erro ao carregar dados:", error));
+
         </script>
   </body>
