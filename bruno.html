@@ -54,7 +54,7 @@
     font-size: 20px;
   }
   
-   #endereco, #qnt_votos {
+   #endereco, #qnt_votos, #total, #metas {
     margin: 0 auto;
     width: 94%;
     padding: 0px;
@@ -113,24 +113,17 @@
       <div id="corpo">
           <img src="https://img.estadao.com.br/fotos/politica/eleicoes-2020/SP/FSP250000662871_div.jpg">
           <div id="texto">
-              <div id ="n_local">$[votos_total/LOCAL_VOTACAO]</div>
-             <div id="button"> <button onclick="alterarVotos('$[votos_total/total_votos_20]');alterarano('2020')">2020 - Vereador</button>
+              <div id ="n_local">$[BRUNO_GABRIEL_12_20/NM_LOCAL_VOTACAO]</div>
+             <div id="button"> <button onclick="alterarVotos('$[BRUNO_GABRIEL_12_20/total_votos_20]');alterarano('2020')">2020 - Vereador</button>
     <!--<button onclick="alterarVotos('$[votos_total/total_votos_16]');alterarano('2016')">2016 - Vereador</button>-->
-    <button id="a2012" onclick="alterarVotos('$[votos_total/total_votos_12]');alterarano('2012')">2012 - Vereador</button></div>
-              <div id="endereco">Endereço: $[votos_total/ENDERECO_LOCAL]</div>
+    <button id="a2012" onclick="alterarVotos('$[BRUNO_GABRIEL_12_20/total_votos_12]');alterarano('2012')">2012 - Vereador</button></div>
+              <!-- REFAZER O BANCO DE DADOS COM O ENDEREÇO DO LOCAL              
+              <div id="endereco">Endereço: $[votos_total/ENDERECO_LOCAL]</div>-->
               <div id="qnt_votos">Total de votos: <span id="votos"></span></div>
+              <div id="total">       Total Eleitores:</div>
+              <div id="metas">     Meta de votos:</div>
           </div>
           </div>
-
-          <table id="dados-app">
-      <div>numero local: <span id="nr-Local"> </span></div>
-      <div>Nome local: <span id="nm-Local"> </span></div>
-      <div>votos 2012: <span id="votos-12"> </span></div>
-      <div>Votos 2020: <span id="votos-20"> </span></div>
-      <div>total: <span id="total"> </span></div>
-      <div>porc: <span id="porc"> </span></div>
-      <div>metas: <span id="metas"> </span></div>
-    </table>
 
           <script>
             function alterarVotos(valor) {
@@ -140,37 +133,13 @@
             function alterarano(ano) {
                 document.getElementById("ano").innerHTML = ano;
             }
-
-// Faça uma solicitação GET para o link do App Script
-fetch(
-  "https://script.google.com/macros/s/AKfycbwA4MLtAqWCYylBhTSh6MGqYXI6ZVPE8eu5WhWzvwi_kmE5HxKf7JaA_dx8oSViFeCo/exec?local=1040"
-)
-  .then((response) => response.json())
-  .then((data) => {
-    // Verifique se os dados foram retornados
-    if (data.retornoDaSaida) {
-      // Salve cada uma das propriedades em variáveis separadas
-      const nrLocal = data.retornoDaSaida[0].Nr_local;
-      const nmLocal = data.retornoDaSaida[0].Nm_local;
-      const votos12 = data.retornoDaSaida[0].votos_12;
-      const votos20 = data.retornoDaSaida[0].Votos_20;
-      const total = data.retornoDaSaida[0].Total;
-      const porc = data.retornoDaSaida[0].Porc;
-      const metas = data.retornoDaSaida[0].Metas;
-
-      // Agora você pode usar essas variáveis para preencher os spans no seu site HTML
-      document.getElementById("nr-local").textContent = nrLocal;
-      document.getElementById("nm-local").textContent = nmLocal;
-      document.getElementById("votos-12").textContent = votos12;
-      document.getElementById("votos-20").textContent = votos20;
-      document.getElementById("total").textContent = total;
-      document.getElementById("porc").textContent = porc;
-      document.getElementById("metas").textContent = metas;
-    } else {
-      console.log("Nenhum dado encontrado");
-    }
-  })
-  .catch((error) => console.error("Erro ao carregar dados:", error));
-
         </script>
   </body>
+
+<!--<table border="0">
+  <tr><td><b>NM_VOTAVEL</b></td><td>$[BRUNO_GABRIEL_12_20/NM_VOTAVEL]</td></tr>
+  <tr><td><b>NR_LOCAL_VOTACAO</b></td><td>$[BRUNO_GABRIEL_12_20/NR_LOCAL_VOTACAO]</td></tr>
+  <tr><td><b>NM_LOCAL_VOTACAO</b></td><td></td></tr>
+  <tr><td><b>total_votos_12</b></td><td></td></tr>
+  <tr><td><b>total_votos_20</b></td><td></td></tr>
+</table>-->
